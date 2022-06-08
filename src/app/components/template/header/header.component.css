@@ -1,0 +1,22 @@
+img {
+    height: 3rem;
+}
+span{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+mat-toolbar
+{
+    justify-content:center;
+    height: 8%;
+    border-bottom: 1px solid;
+    
+}
+
+h1{
+    padding-left: 1rem;
+    font-size: 2rem;
+}
