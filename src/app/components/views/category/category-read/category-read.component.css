@@ -16,3 +16,27 @@
 .table{
     width: 100%;
 }
+button{
+    margin-bottom: 0.7rem;
+}
+
+.edit{
+    color: black;
+}
+
+.delete {
+    color: red;
+}
+
+.mat-header {
+    width: 5rem;
+}
+
+.livros{
+    margin-left: 0.5rem;
+}
+
+.modal {
+    margin-right: 1rem;
+            
+}

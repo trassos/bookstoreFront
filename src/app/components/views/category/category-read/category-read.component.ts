@@ -1,29 +1,41 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { CategoryService } from "../category-service/category-service";
 import { Category } from "../category.model";
-
+import { MatDialog } from "@angular/material/dialog";
 @Component({
   selector: "app-category-read",
   templateUrl: "./category-read.component.html",
   styleUrls: ["./category-read.component.css"],
 })
 export class CategoryReadComponent implements OnInit {
+  
+  categories: Category[] = [];
 
-  categories: Category[] = []
+  displayedColumns: string[] = [
+    "id",
+    "name",
+    "description",
+    "books",
+    "actions",
+  ];
 
-  displayedColumns: string[] = ["id", "name", "description", "actions"];
-
-  constructor(private service: CategoryService) { }
+  constructor(
+    private service: CategoryService,
+    private router: Router,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.findAll();
-    console.log("AOIII");
   }
 
   findAll() {
-    this.service.findAll().subscribe(resposta => {
-      console.log(resposta);
+    this.service.findAll().subscribe((resposta) => {
       this.categories = resposta;
     });
+  }
+  goToCategoryCreate() {
+    this.router.navigate(["categories/create"]);
   }
 }
