@@ -43,4 +43,7 @@ export class CategoryDeleteComponent implements OnInit {
       }
     );
   }
+  cancel() {
+    this.router.navigate([this.category]);
+  }
 }

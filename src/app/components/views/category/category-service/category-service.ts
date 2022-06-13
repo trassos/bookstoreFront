@@ -29,6 +29,11 @@ export class CategoryService {
     return this.http.post<Category>(url, category);
   }
 
+  update(category: Category): Observable<Category>{
+    const url = this.baseUrl + 'categories/'+category.id;
+    return this.http.put<Category>(url, category);
+  }
+
   mensagem(str: String): void {
     this.snack.open( ''+str, 'OK', {
       horizontalPosition: 'end',
