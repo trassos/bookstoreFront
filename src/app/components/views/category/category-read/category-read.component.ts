@@ -38,4 +38,8 @@ export class CategoryReadComponent implements OnInit {
   goToCategoryCreate() {
     this.router.navigate(["categories/create"]);
   }
+  
+  goToCategoryDelete() {
+    this.router.navigate(["categories/delete"]);
+  }
 }
